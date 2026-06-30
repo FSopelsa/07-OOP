@@ -6,7 +6,13 @@ public class Customer {
     private String email;
 
     public Customer(String name, String email) {
-        // TODO: Validate input
+        // Validate input
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be null or empty");
+        }
+        if (email == null || email.isEmpty()) {
+            throw new IllegalArgumentException("Email cannot be null or empty");
+        }
 
         this.name = name;
         this.email = email;
@@ -21,6 +27,6 @@ public class Customer {
     }
 
     public void printInfo() {
-        // TODO
+        System.out.println("Customer: " + name + " - " + email);
     }
 }
